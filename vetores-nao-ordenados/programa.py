@@ -1,0 +1,16 @@
+from vetor_nao_ordenado import VetorNaoOrdenado
+
+vetor = VetorNaoOrdenado(5)
+vetor.inserir(12)
+vetor.inserir(4)
+vetor.inserir(9)
+vetor.inserir(1)
+vetor.inserir(13)
+vetor.inserir(15)
+vetor.inserir(18)
+vetor.imprimir()
+print(vetor.pesquisar(13))
+print(vetor.pesquisar(44))
+vetor.excluir(23)
+vetor.excluir(9)
+vetor.imprimir()
