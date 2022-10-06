@@ -1,0 +1,16 @@
+from fila_circular import FilaCircular
+
+fila = FilaCircular(5)
+print(fila.primeiro())
+fila.enfileirar(1)
+print(fila.primeiro())
+fila.enfileirar(2)
+print(fila.primeiro())
+fila.enfileirar(3)
+fila.enfileirar(4)
+fila.enfileirar(5)
+print(fila.primeiro())
+fila.enfileirar(6)
+fila.desenfileirar()
+fila.desenfileirar()
+print(fila.primeiro())
