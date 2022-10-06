@@ -32,7 +32,7 @@ class FilaCircular:
         
         temporario = self.valores[self.inicio]
         self.inicio += 1
-        if self.inicio == self.capacidade:
+        if self.inicio == self.capacidade - 1:
             self.inicio = 0
         self.numero_elementos -= 1
         return temporario
