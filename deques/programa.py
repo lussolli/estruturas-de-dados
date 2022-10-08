@@ -1,0 +1,15 @@
+from deque import Deque
+
+deque = Deque(5)
+deque.insere_final(5)
+print(deque.get_inicio(), deque.get_final())
+deque.insere_final(10)
+print(deque.get_inicio(), deque.get_final())
+deque.insere_inicio(3)
+print(deque.get_inicio(), deque.get_final())
+deque.insere_inicio(2)
+deque.insere_final(11)
+print(deque.get_inicio(), deque.get_final())
+deque.excluir_inicio()
+deque.excluir_final()
+print(deque.get_inicio(), deque.get_final())
