@@ -1,0 +1,15 @@
+from lista_encadeada_extremidade_dupla import ListaEncadeadaExtremidadeDupla
+
+lista = ListaEncadeadaExtremidadeDupla()
+lista.insere_inicio(5)
+lista.insere_inicio(4)
+lista.insere_inicio(3)
+lista.insere_inicio(2)
+lista.insere_inicio(1)
+lista.insere_final(6)
+lista.insere_final(7)
+lista.insere_final(8)
+lista.insere_final(9)
+lista.insere_final(10)
+lista.mostrar()
+lista.excluir_inicio().mostra_no()
