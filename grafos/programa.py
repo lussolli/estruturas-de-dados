@@ -1,3 +1,5 @@
+from pilha import Pilha
+
 class Vertice:
     def __init__(self, rotulo):
         self.rotulo = rotulo
@@ -78,8 +80,26 @@ class Grafo:
     bucharest.adiciona_adjacente(Adjacente(pitesti, 101))
     bucharest.adiciona_adjacente(Adjacente(giurgiu, 90))
 
+class BuscaProfundidade:
+    def __init__(self, inicio):
+        self.inicio = inicio
+        self.inicio.visitado = True
+        self.pilha = Pilha(20)
+        self.pilha.empilhar(inicio)
+    
+    def buscar(self):
+        topo = self.pilha.ver_topo()
+        print("Topo: {}".format(topo.rotulo))
+        for adjacente in topo.adjacentes:
+            print("Topo é {}. {} já foi visitada? {}".format(topo.rotulo, adjacente.vertice.rotulo, adjacente.vertice.visitado))
+            if adjacente.vertice.visitado == False:
+                adjacente.vertice.visitado = True
+                self.pilha.empilhar(adjacente.vertice)
+                print("Empilhou {}".format(adjacente.vertice.rotulo))
+                self.buscar()
+        print("Desempilhou: {}".format(self.pilha.desempilhar().rotulo))
+        print()
+
 grafo = Grafo()
-print("Arad:")
-grafo.arad.mostra_adjacentes()
-print("Bucharest:")
-grafo.bucharest.mostra_adjacentes()
+busca_profundidade = BuscaProfundidade(grafo.arad)
+busca_profundidade.buscar()
